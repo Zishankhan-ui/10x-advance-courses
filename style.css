@@ -1,0 +1,307 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f6f8fc;
+    color: #222;
+}
+/* Light mode */
+body.light {
+    background: #ffffff;
+    color: #111;
+  }
+  body.light .navbar,
+  body.light .dark {
+    background: #f4f6fb;
+    color: #111;
+  }
+  body.light .card {
+    background: #fff;
+  }
+  
+  /* Theme button */
+  .theme-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Stats */
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+  }
+  .stat h3 {
+    font-size: 40px;
+    color: #4dd0ff;
+  }
+  
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  .modal-box {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    width: 360px;
+    text-align: center;
+  }
+  
+  /* Toast */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #1e2f78;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: 0.4s;
+  }
+  .toast.show { opacity: 1; }
+  
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: #0a0f2c;
+    color: #fff;
+}
+
+.navbar a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 110px 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #0a0f2c, #1e2f78);
+    color: white;
+}
+
+.hero span {
+    color: #4dd0ff;
+}
+
+.hero button {
+    margin-top: 30px;
+    padding: 14px 32px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #4dd0ff;
+    cursor: pointer;
+}
+
+.section {
+    padding: 90px 60px;
+    text-align: center;
+}
+
+.dark {
+    background: #0a0f2c;
+    color: white;
+}
+
+.subtitle {
+    max-width: 700px;
+    margin: 10px auto 40px;
+    font-size: 17px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 300px;
+    border-radius: 14px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark .card {
+    background: #141b46;
+}
+
+.features {
+    list-style: none;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.amount {
+
+    /* JS Enhancements */
+    .navbar.scrolled {
+        background: #050814;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    nav a.active {
+        color: #4dd0ff;
+    }
+
+    .card {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 0.6s ease;
+    }
+
+    .card.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Modal */
+    .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    .modal-box {
+        background: white;
+        padding: 30px;
+        width: 320px;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .modal-box button {
+        margin: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    /* Toast */
+    .toast {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: #1e2f78;
+        color: white;
+        padding: 14px 20px;/* Reveal animation */
+        .reveal {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+        .card, h2, p, ul {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: 0.7s ease;
+        }
+        
+        /* Navbar */
+        .navbar.scrolled {
+          background: #050814;
+          box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        }
+        nav a.active {
+          color: #4dd0ff;
+        }
+        
+        /* Button ripple */
+        button {
+          position: relative;
+          overflow: hidden;
+        }
+        .ripple {
+          position: absolute;
+          width: 120px;
+          height: 120px;
+          background: rgba(255,255,255,0.4);
+          border-radius: 50%;
+          animation: ripple 0.6s linear;
+        }
+        @keyframes ripple {
+          from { transform: scale(0); opacity: 1; }
+          to { transform: scale(3); opacity: 0; }
+        }
+        
+        /* Modal smoother */
+        .modal-box {
+          animation: pop 0.4s ease;
+        }
+        @keyframes pop {
+          from { transform: scale(0.8); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Toast */
+        .toast {
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          background: #1e2f78;
+          color: white;
+          padding: 14px 22px;
+          border-radius: 8px;
+          opacity: 0;
+          transition: 0.4s;
+          z-index: 9999;
+        }
+        .toast.show { opacity: 1; }
+        
+        /* Cursor glow */
+        .cursor-glow {
+          position: fixed;
+          width: 18px;
+          height: 18px;
+          background: #4dd0ff;
+          border-radius: 50%;
+          pointer-events: none;
+          mix-blend-mode: screen;
+          filter: blur(10px);
+          transform: translate(-50%, -50%);
+        }
+        
+        border-radius: 8px;
+        opacity: 0;
+        transition: 0.4s;
+    }
+
+    .toast.show {
+        opacity: 1;
+    }
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.featured {
+    border: 3px solid #4dd0ff;
+}
+
+.footer {
+    background: #050814;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
